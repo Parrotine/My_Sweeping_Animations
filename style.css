@@ -1,0 +1,147 @@
+article {
+    display: block;
+    width: 90%;
+    height: 100%;
+    clear: both;;
+    padding: 2em 5% 0 5%;
+    border-bottom: 1px solid #000;
+    background: #fff;
+    overflow: auto;
+}
+
+nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 2em;
+    background: #000;
+    z-index: 9999;
+}
+
+nav a {
+    display: inline-block;
+    color: #fff;
+    padding: 0.5em 1em 0.5em 1em;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #c00;
+}
+
+#animElm_swipe {
+    display: block;
+    position: fixed;
+    top: -240%;
+    left: 50%;
+    -webkit-transform: rotate(-90deg);
+    -webkit-transform-origin: 0 0;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    width: 200%;
+    height: 500%;
+    background: #c00;
+    z-index: 100;
+}
+
+@-webkit-keyframes anim_swipeIn {
+    0% { -webkit-transform: rotate(-90deg); }
+    100% { -webkit-transform: rotate(180deg); }
+}
+@-webkit-keyframes anim_swipeOut {
+    0% { -webkit-transform: rotate(180deg); }
+    100% { -webkit-transform: rotate(-90deg); }
+}
+@keyframes anim_swipeIn {
+    0% { transform: rotate(-90deg); }
+    100% { transform: rotate(180deg); }
+}
+@keyframes anim_swipeOut {
+    0% { transform: rotate(180deg); }
+    100% { transform: rotate(-90deg); }
+}
+
+#animElm_swipe[data-animation="in"]{
+    -webkit-animation: anim_swipeIn 2s forwards linear;
+    animation: anim_swipeIn 2s forwards linear;
+}
+
+#animElm_swipe[data-animation="out"]{
+    -webkit-animation: anim_swipeOut 2s forwards linear;
+    animation: anim_swipeOut 2s forwards linear;
+}
+
+article {
+    position: absolute;
+    top: -100%;
+    left: 0;
+}
+
+article[data-status="open"]{
+    -webkit-animation: anim_pullIn 2s forwards linear;
+    animation: anim_pullIn 2s forwards linear;
+}
+article[data-status="closed"]{
+    -webkit-animation: anim_pullOut 2s forwards linear;
+    animation: anim_pullOut 2s forwards linear;
+}
+
+/* Page 4 color rule */
+#page4 {
+    background: lightblue;
+}
+/* END color rule */
+
+/* Font rules */
+body p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+nav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ANIMATIONS: Chrome, Safari, Opera */
+@-webkit-keyframes anim_pullIn{
+    0% { top: -100%; }
+    50% { top: -100%; }
+    51% { top: 0; }
+    100% { top: 0; }
+}
+@-webkit-keyframes anim_pullOut{
+    0% { top: 0; }
+    50% { top: 0; }
+    51% { top: -100%; }
+    100% { top: -100%; }
+}
+/* ANIMATIONS: Standard syntax */
+@keyframes anim_pullIn{
+    0% { top: -100%; }
+    50% { top: -100%; }
+    51% { top: 0; }
+    100% { top: 0;}
+}
+@keyframes anim_pullOut{
+    0% { top: 0; }
+    50% { top: 0; }
+    51% { top: -100%; }
+    100% { top: -100%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
